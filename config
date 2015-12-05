@@ -1,0 +1,74 @@
+{
+	"base" : "data",
+	"dates" : [20151028, 20151029, 20151102, 20151104, 20151112, 20151117, 20151118, 20151119, 20151127, 20151128, 20151129, 20151130, 20151201, 20151202, 20151203],
+	"battor" : {
+		"dir" : "battor",
+		"prefix" : "battor_",
+		"suffix" : ".gz",
+		"down_sample" : 1,
+		"start_timestamp" : 0,
+		"stop_timestamp" : 0,
+		"smoothen" : 200
+	},
+	"edge" : {
+		"min_current" : 280,
+		"current_threshold" : 70,
+		"drop_current" : 150,
+		"edge_samples" : 200,
+		"history_samples" : 20000,
+		"stabilization_samples" : 200,
+		"before_percentile" : 0,
+		"after_percentile" : 97,
+		"hacks" : [
+			{
+				"date" : 20151117,
+				"current_threshold" : 90
+			},
+			{
+				"date" : 20151102,
+				"current_threshold" : 135,
+				"history_samples" : 18000,
+				"before_percentile" : 3,
+				"after_percentile" : 93
+			},
+			{
+				"date" : 20151127,
+				"before_percentile" : 3
+			},
+			{
+				"date" : 20151128,
+				"before_percentile" : 3,
+				"after_percentile" : 93
+			},
+			{
+				"date" : 20151129,
+				"after_percentile" : 93
+			},
+			{
+				"date" : 20151130,
+				"before_percentile" : 3
+			}
+		]
+	},
+	"device1" : {
+		"dir" : "device_1",
+		"prefix" : "exp_",
+		"suffix" : ".log"
+	},
+	"device2" : {
+		"dir" : "device_2",
+		"prefix" : "exp_",
+		"suffix" : ".log"
+	},
+	"server" : {
+		"dir" : "server",
+		"prefix" : "server_",
+		"suffix" : ".log"
+	},
+	"handover" : {
+		"dir" : "handover",
+		"prefix" : "diag_",
+		"suffix" : ".gz"
+	},
+	"schedule" : "schedule.json"
+}
